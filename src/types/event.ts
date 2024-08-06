@@ -1,6 +1,6 @@
 import { Presenter } from "./presenter";
 
-export type EventDetail = {
+export type Event = {
   id: string;
   title: string;
   description?: {
@@ -20,3 +20,15 @@ export enum EventType {
   visita_tecnica,
   show_de_talentos,
 }
+
+export type EventDetail = {
+  id: string;
+  title: string;
+  description?: {
+    raw: string;
+  };
+  event_type: EventType;
+  presenters: Presenter[];
+  schedule: Date;
+  location: string;
+};
